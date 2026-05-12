@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Corporativo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column vh-100 bg-light">
+
+    <!-- Navbar: Rectángulo azul formal -->
+    <nav class="navbar navbar-dark shadow-sm custom-nav">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">
+                <i class="bi bi-fork-knife fs-4 text-white"></i> The restaurant
+            </span>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal (Centrado) -->
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center">
+        <div class="card shadow-lg border-0 login-card">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <div class="icon-circle bg-primary text-white mx-auto mb-3">
+                        <i class="bi bi-person-fill-lock fs-1"></i>
+                    </div>
+                    <h3 class="fw-bold text-dark">Acceso al Sistema</h3>
+                </div>
+    
+                <form id="loginForm">
+                    <!-- Selección de Cargo -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Cargo del Empleado</label>
+                        <select class="form-select border-primary-subtle" id="cargo" required>
+                            <option value="" selected disabled>Elija su cargo...</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Operador">Operador</option>
+                        </select>
+                    </div>
+    
+                    <!-- Campo de Contraseña con Ojo -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Contraseña</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-primary-subtle">
+                                <i class="bi bi-lock text-primary"></i>
+                            </span>
+                            <input type="password" id="password" class="form-control border-primary-subtle"
+                                placeholder="Contraseña (1-8)" required>
+                            <button class="btn btn-outline-secondary border-primary-subtle bg-white" type="button"
+                                id="togglePassword">
+                                <i class="bi bi-eye text-primary"></i>
+                            </button>
+                        </div> <!-- Aquí cerraba el input-group -->
+                    </div> <!-- Aquí cerraba el mb-4 -->
+    
+                    <!-- Botón de Ingresar (Fuera del grupo de la contraseña) -->
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg shadow-sm">Ingresar</button>
+                    </div>
+    
+                    <!-- Mensaje de Error -->
+                    <div id="mensajeError" class="text-danger mt-3 text-center d-none">
+                        <small><i class="bi bi-exclamation-circle me-1"></i> Contraseña incorrecta</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer con información -->
+    <footer class="footer mt-auto py-3 bg-dark border-top text-center text-white">
+        <div class="container">
+            <div class="row text-white-50">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <small>© 2024 Mi Empresa S.A.</small>
+                </div>
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <small><i class="fas fa-headset me-1"></i> Soporte: +123 456 789</small>
+                </div>
+                <div class="col-md-4">
+                    <small><i class="fas fa-globe me-1"></i> www.tuempresa.com</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

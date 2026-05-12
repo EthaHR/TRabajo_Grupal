@@ -1,0 +1,81 @@
+:root {
+    --blue-corporate: #1a3a5f;
+    --blue-accent: #0d6efd;
+}
+
+body {
+    background: radial-gradient(circle, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Inputs con foco personalizado al azul corporativo */
+.form-control:focus, .form-select:focus {
+    border-color: var(--blue-corporate);
+    box-shadow: 0 0 0 0.25rem rgba(26, 58, 95, 0.25);
+}
+
+/* Estilo del Navbar */
+.custom-nav {
+    background-color: var(--blue-corporate);
+    height: 60px;
+}
+
+/* Tarjeta de Login (Agrupada con animación) */
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    animation: fadeInUp 0.8s ease-out; /* Animación integrada aquí */
+}
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--blue-corporate) !important;
+}
+
+/* Botón y estados */
+.btn-primary {
+    background-color: var(--blue-corporate);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #122a45;
+    transform: translateY(-1px); /* Un pequeño efecto de elevación */
+}
+
+/* Estilo del Footer */
+.footer {
+    font-size: 0.9rem;
+    background-color: var(--blue-corporate); 
+    color: #ffffff;
+    border-top: 2px solid var(--blue-accent);
+}
+
+.footer small, .footer i {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 576px) {
+    .login-card {
+        margin: 20px;
+    }
+}
