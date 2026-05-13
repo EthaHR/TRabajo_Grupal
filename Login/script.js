@@ -20,14 +20,28 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const mensajeError = document.getElementById('mensajeError');
     const passInput = document.getElementById('password');
 
-    if (password === "12345678") {
-        mensajeError.classList.add('d-none');
-        passInput.classList.remove('is-invalid');
-        alert("Acceso concedido para: " + cargo);
-        window.location.href = ""
-    } else {
+    // Limpiar estados de error previos
+    mensajeError.classList.add('d-none');
+    passInput.classList.remove('is-invalid');
+
+    // VALIDACIÓN PARA ADMINISTRADOR
+    // Cargo: Administrador | Pass: 12345678
+    if (cargo === "Administrador" && password === "12345678") {
+        alert("Acceso concedido como Administrador");
+        window.location.href = "admin.html"; // Cambia por tu página real
+    } 
+    // VALIDACIÓN PARA MOZO
+    // Cargo: Mozo | Pass: 87654321
+    else if (cargo === "Mozo" && password === "87654321") {
+        alert("Acceso concedido como Mozo");
+        window.location.href = "mozo.html"; // Cambia por tu página real
+    } 
+    // SI NADA COINCIDE
+    else {
         mensajeError.classList.remove('d-none');
         passInput.classList.add('is-invalid');
+        // Opcional: un mensaje más específico
+        mensajeError.innerHTML = '<small><i class="bi bi-exclamation-circle me-1"></i> Credenciales incorrectas para el cargo seleccionado</small>';
     }
 });
 
