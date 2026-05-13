@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Restaurante "El Gran Banquete" — Sistema de Gestión</title>
-  <meta name="description" content="Sistema elegante de gestión para restaurante: pedidos, menú, subtotales, IGV, descuentos y reportes.">
+  <meta name="description"
+    content="Sistema elegante de gestión para restaurante: pedidos, menú, subtotales, IGV, descuentos y reportes.">
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- =========================================================
@@ -73,7 +79,8 @@
 
           <!-- 6. SALIR -->
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-outline-warning btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#modalSalir">Salir</a>
+            <a class="btn btn-outline-warning btn-sm" href="#" data-bs-toggle="modal"
+              data-bs-target="#modalSalir">Salir</a>
           </li>
         </ul>
       </div>
@@ -84,11 +91,12 @@
   <!-- =========================================================
        HERO / PORTADA
        ========================================================= -->
-  <header id="inicio" class="bg-dark text-light text-center py-5" style="margin-top:56px;">
+  <header id="inicio" class="hero-section bg-dark text-light text-center py-5">
     <div class="container py-5">
-      <p class="text-warning text-uppercase mb-2" style="letter-spacing:.3em;">Cocina de autor</p>
+      <p class="text-warning text-uppercase mb-2 titulo-separado">Cocina de autor</p>
       <h1 class="display-3 fw-light">Restaurante <span class="fw-bold text-warning">"El Gran Banquete"</span></h1>
-      <p class="lead text-light-emphasis mt-3">Sistema de gestión integral · pedidos, menú y reportes en un solo lugar.</p>
+      <p class="lead text-light-emphasis mt-3">Sistema de gestión integral · pedidos, menú y reportes en un solo lugar.
+      </p>
       <a href="#registrar-pedido" class="btn btn-warning btn-lg mt-3 px-4">Registrar nuevo pedido</a>
     </div>
   </header>
@@ -113,11 +121,11 @@
               <form class="row g-3">
                 <div class="col-md-4">
                   <label class="form-label">N° de pedido</label>
-                  <input type="text" class="form-control" style="color:rgb(128, 128, 128)" value="P-001" readonly>
+                  <input type="text" class="form-control pedido-color" value="P-001" readonly>
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Mesa</label>
-                  <input type="number" class="form-control" placeholder="Ej. 5">
+                  <input type="number" id="mesa" class="form-control" placeholder="Ej. 5">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Mesero</label>
@@ -125,7 +133,7 @@
                 </div>
                 <div class="col-md-8">
                   <label class="form-label">Cliente</label>
-                  <input type="text" class="form-control" placeholder="Nombre del cliente">
+                  <input type="text" class="form-control" id="cliente" placeholder="Nombre del cliente">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Fecha</label>
@@ -136,24 +144,26 @@
 
                 <div class="col-md-6">
                   <label class="form-label">Plato</label>
-                  <select class="form-select">
-                    <option>Lomo Saltado — S/ 28.00</option>
-                    <option>Ají de Gallina — S/ 22.00</option>
-                    <option>Ceviche Clásico — S/ 32.00</option>
-                    <option>Arroz con Mariscos — S/ 35.00</option>
+                  <select class="form-select" id="plato">
+                    <option value="Lomo Saltado">Lomo Saltado — S/ 28.00</option>
+                    <option value="Ají de Gallina">Ají de Gallina — S/ 22.00</option>
+                    <option value="Ceviche Clásico">Ceviche Clásico — S/ 32.00</option>
+                    <option value="Arroz con Mariscos">Arroz con Mariscos — S/ 35.00</option>
                   </select>
                 </div>
                 <div class="col-md-3">
                   <label class="form-label">Cantidad</label>
-                  <input type="number" class="form-control" value="1" min="1">
+                  <input type="number" class="form-control" id="cantidad" value="1" min="1">
                 </div>
                 <div class="col-md-3 d-flex align-items-end">
-                  <button type="button" class="btn btn-dark w-100">+ Agregar</button>
+                  <button type="button" id="btnAgregar" class="btn btn-dark w-100">
+                    + Agregar
+                  </button>
                 </div>
 
                 <div class="col-12 text-end mt-3">
                   <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
-                  <button type="submit" class="btn btn-warning">Guardar pedido</button>
+                  <button type="button" id="btnGuardar" class="btn btn-warning">Guardar pedido</button>
                 </div>
               </form>
             </div>
@@ -166,16 +176,19 @@
               <h5 class="fw-bold mb-3">Detalle del pedido</h5>
               <table class="table table-sm align-middle">
                 <thead>
-                  <tr><th>Plato</th><th class="text-center">Cant.</th><th class="text-end">Importe</th></tr>
+                  <tr>
+                    <th>Plato</th>
+                    <th class="text-center">Cant.</th>
+                    <th class="text-end">Importe</th>
+                  </tr>
                 </thead>
-                <tbody>
-                  <tr><td>Lomo Saltado</td><td class="text-center">2</td><td class="text-end">S/ 56.00</td></tr>
-                  <tr><td>Ceviche Clásico</td><td class="text-center">1</td><td class="text-end">S/ 32.00</td></tr>
+                <tbody id="detallePedido">
+
                 </tbody>
               </table>
               <div class="d-flex justify-content-between border-top pt-3">
                 <span class="fw-semibold">Subtotal</span>
-                <span class="fw-bold">S/ 88.00</span>
+                <span class="fw-bold" id="subtotalDetalle">S/ 0.00</span>
               </div>
             </div>
           </div>
@@ -200,13 +213,18 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="input-group input-group-lg shadow-sm">
-            <select class="form-select" style="max-width:180px;">
-              <option>Pedido</option>
-              <option>Cliente</option>
-              <option>Plato</option>
+
+            <select class="form-select busqueda-select" id="tipoBusqueda">
+              <option value="Pedido">Pedido</option>
+              <option value="Cliente">Cliente</option>
+              <option value="Plato">Plato</option>
             </select>
-            <input type="text" class="form-control" placeholder="Escribe tu búsqueda...">
-            <button class="btn btn-dark">Buscar</button>
+
+            <input type="text" class="form-control" id="inputBuscar" placeholder="Escribe tu búsqueda...">
+
+            <button class="btn btn-dark" id="btnBuscar">
+              Buscar
+            </button>
           </div>
         </div>
       </div>
@@ -221,7 +239,7 @@
     <div class="container">
       <div class="row mb-4">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="text-warning text-uppercase mb-1" style="letter-spacing:.25em;">Carta</p>
+          <p class="text-warning text-uppercase mb-1 reporte-spacing">Carta</p>
           <h2 class="fw-bold">Mostrar menú</h2>
         </div>
       </div>
@@ -314,14 +332,16 @@
         <table class="table table-hover align-middle bg-white mb-0">
           <thead class="table-dark">
             <tr>
-              <th>#</th><th>Cliente</th><th>Mesa</th><th>Platos</th>
-              <th class="text-end">Subtotal</th><th class="text-center">Estado</th>
+              <th>#</th>
+              <th>Cliente</th>
+              <th>Mesa</th>
+              <th>Platos</th>
+              <th class="text-end">Subtotal</th>
+              <th class="text-center">Estado</th>
             </tr>
           </thead>
-          <tbody>
-            <tr><td>P-001</td><td>Carlos Pérez</td><td>3</td><td>Lomo Saltado x2</td><td class="text-end">S/ 56.00</td><td class="text-center"><span class="badge bg-success">Pagado</span></td></tr>
-            <tr><td>P-002</td><td>Ana Torres</td><td>5</td><td>Ceviche x1, Causa x1</td><td class="text-end">S/ 52.00</td><td class="text-center"><span class="badge bg-warning text-dark">Pendiente</span></td></tr>
-            <tr><td>P-003</td><td>Luis Gómez</td><td>2</td><td>Arroz Mariscos x1</td><td class="text-end">S/ 35.00</td><td class="text-center"><span class="badge bg-success">Pagado</span></td></tr>
+          <tbody id="tablaPedidos">
+
           </tbody>
         </table>
       </div>
@@ -346,28 +366,72 @@
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
               <form class="row g-3">
+
                 <div class="col-12">
                   <label class="form-label">Subtotal (S/)</label>
-                  <input type="number" class="form-control" value="88.00" step="0.01">
+
+                  <input type="number" class="form-control" id="subtotalInput" placeholder="Ingrese subtotal"
+                    step="0.01">
                 </div>
+
                 <div class="col-md-6">
                   <label class="form-label">IGV (%)</label>
-                  <input type="number" class="form-control" value="18">
+
+                  <input type="number" class="form-control" id="igvInput" value="18" readonly>
                 </div>
+
                 <div class="col-md-6">
                   <label class="form-label">Descuento (%)</label>
-                  <input type="number" class="form-control" value="10">
+
+                  <input type="number" class="form-control" id="descuentoInput" value="10" min="0" max="100" step="1">
                 </div>
+
                 <div class="col-12 d-grid">
-                  <button type="button" class="btn btn-dark btn-lg">Calcular total</button>
+                  <button type="button" class="btn btn-dark btn-lg" id="btnCalcular">
+
+                    Calcular total
+
+                  </button>
                 </div>
+
               </form>
 
               <ul class="list-group list-group-flush mt-4">
-                <li class="list-group-item d-flex justify-content-between"><span>Subtotal</span><strong>S/ 88.00</strong></li>
-                <li class="list-group-item d-flex justify-content-between"><span>IGV (18%)</span><strong>S/ 15.84</strong></li>
-                <li class="list-group-item d-flex justify-content-between text-success"><span>Descuento (10%)</span><strong>- S/ 10.38</strong></li>
-                <li class="list-group-item d-flex justify-content-between bg-dark text-warning fs-5"><span>Total a pagar</span><strong>S/ 93.46</strong></li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Subtotal</span>
+
+                  <strong id="resultadoSubtotal">
+                    S/ 0.00
+                  </strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>IGV (18%)</span>
+
+                  <strong id="resultadoIGV">
+                    S/ 0.00
+                  </strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between text-success">
+                  <span>Descuento</span>
+
+                  <strong id="resultadoDescuento">
+                    S/ 0.00
+                  </strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between bg-dark text-warning fs-5">
+
+                  <span>Total a pagar</span>
+
+                  <strong id="resultadoTotal">
+                    S/ 0.00
+                  </strong>
+
+                </li>
+
               </ul>
             </div>
           </div>
@@ -385,7 +449,7 @@
     <div class="container">
       <div class="row mb-4">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="text-warning text-uppercase mb-1" style="letter-spacing:.25em;">Reportes</p>
+          <p class="text-warning text-uppercase mb-1 texto-reportes">Reportes</p>
           <h2 class="fw-bold">Resumen del negocio</h2>
           <p class="text-muted">
             <em>Total del día</em>: suma de todos los pedidos cobrados durante la jornada.<br>
@@ -400,13 +464,52 @@
           <div class="card border-0 shadow-sm h-100">
             <div class="card-body p-4 text-center">
               <p class="text-uppercase text-muted small mb-1">Total del día</p>
-              <h2 class="display-5 fw-bold text-success">S/ 1,248.50</h2>
+              <h2 class="display-5 fw-bold text-success" id="totalDia">S/ 0.00</h2>
               <p class="text-muted">Acumulado de 24 pedidos cobrados hoy.</p>
               <hr>
               <div class="row text-center">
-                <div class="col"><div class="fw-bold">24</div><small class="text-muted">Pedidos</small></div>
-                <div class="col"><div class="fw-bold">S/ 52.02</div><small class="text-muted">Ticket prom.</small></div>
-                <div class="col"><div class="fw-bold">S/ 190.40</div><small class="text-muted">IGV recaudado</small></div>
+                <div class="col">
+
+                  <div class="fw-bold" id="cantidadPedidos">
+                    0
+                  </div>
+
+                  <small class="text-muted">
+                    Pedidos
+                  </small>
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="col">
+
+                  <div class="fw-bold" id="ticketPromedio">
+                    S/ 0.00
+                  </div>
+
+                  <small class="text-muted">
+                    Ticket prom.
+                  </small>
+
+                </div>
+
+                <div class="col">
+
+                  <div class="fw-bold" id="igvRecaudado">
+                    S/ 0.00
+                  </div>
+
+                  <small class="text-muted">
+                    IGV recaudado
+                  </small>
+
+                </div>
               </div>
             </div>
           </div>
@@ -416,21 +519,55 @@
         <div id="plato-vendido" class="col-md-6">
           <div class="card border-0 shadow-sm h-100">
             <div class="card-body p-4">
-              <p class="text-uppercase text-muted small mb-1 text-center">Plato más vendido</p>
-              <h3 class="fw-bold text-center text-warning">Lomo Saltado</h3>
-              <p class="text-center text-muted">18 unidades vendidas hoy</p>
 
-              <p class="small mb-1 mt-4">Lomo Saltado <span class="float-end">18</span></p>
-              <div class="progress mb-3" style="height:8px;"><div class="progress-bar bg-warning" style="width:100%"></div></div>
+              <p class="text-uppercase text-muted small mb-1 text-center">
+                Plato más vendido
+              </p>
 
-              <p class="small mb-1">Ceviche Clásico <span class="float-end">12</span></p>
-              <div class="progress mb-3" style="height:8px;"><div class="progress-bar bg-warning" style="width:66%"></div></div>
+              <h3 class="fw-bold text-center text-warning" id="platoTop">
+                Ninguno
+              </h3>
 
-              <p class="small mb-1">Ají de Gallina <span class="float-end">9</span></p>
-              <div class="progress mb-3" style="height:8px;"><div class="progress-bar bg-warning" style="width:50%"></div></div>
+              <p class="text-center text-muted" id="cantidadTop">
+                0 unidades vendidas hoy
+              </p>
 
-              <p class="small mb-1">Arroz con Mariscos <span class="float-end">7</span></p>
-              <div class="progress" style="height:8px;"><div class="progress-bar bg-warning" style="width:39%"></div></div>
+              <p class="small mb-1 mt-4">
+                Lomo Saltado
+                <span class="float-end">18</span>
+              </p>
+
+              <div class="progress mb-3 progress-altura">
+                <div class="progress-bar bg-warning barra-100"></div>
+              </div>
+
+              <p class="small mb-1">
+                Ceviche Clásico
+                <span class="float-end">12</span>
+              </p>
+
+              <div class="progress mb-3 progress-altura">
+                <div class="progress-bar bg-warning barra-66"></div>
+              </div>
+
+              <p class="small mb-1">
+                Ají de Gallina
+                <span class="float-end">9</span>
+              </p>
+
+              <div class="progress mb-3 progress-altura">
+                <div class="progress-bar bg-warning barra-50"></div>
+              </div>
+
+              <p class="small mb-1">
+                Arroz con Mariscos
+                <span class="float-end">7</span>
+              </p>
+
+              <div class="progress progress-altura">
+                <div class="progress-bar bg-warning barra-39"></div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -469,5 +606,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
+
 </html>
