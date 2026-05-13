@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Ventas | "EL GRAN BANQUETE"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-ventas">
+        <header>
+            <h1>"EL GRAN BANQUETE"</h1>
+            <p class="subtitulo">Sistema de Gestión de Ventas</p>
+        </header>
+
+        <section class="seccion-card">
+            <h3><span class="icon">💰</span> Monto del Consumo</h3>
+            <div class="input-group">
+                <input type="number" id="inputSubtotal" placeholder="Ej: 100.00" value="100.00" step="0.01" min="0">
+            </div>
+            <p class="info-texto">Ingresa el monto base para calcular impuestos y descuentos.</p>
+        </section>
+
+        <section class="seccion-card">
+            <h3><span class="icon">🛵</span> Tipo de Servicio</h3>
+            <div class="opciones-servicio">
+                <label class="radio-label">
+                    <input type="radio" name="tipoServicio" value="mesa" checked> 
+                    <div class="info-radio">
+                        <strong>En Mesa</strong>
+                        <span>S/ 0.00 adicional</span>
+                    </div>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="tipoServicio" value="delivery"> 
+                    <div class="info-radio">
+                        <strong>Delivery</strong>
+                        <span>+ S/ 7.00 recargo</span>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <section class="seccion-card">
+            <h3><span class="icon">🏷️</span> Código de Promoción</h3>
+            <div class="input-group">
+                <input type="text" id="inputCupon" placeholder="Ej: BANQUETE10">
+                <button id="btnAplicar" class="btn-secundario">Aplicar</button>
+            </div>
+            <p id="mensajePromo" class="info-texto">Ingresa un cupón para validar beneficios.</p>
+        </section>
+
+        <section class="seccion-card resumen">
+            <h3>Resumen de la Cuenta</h3>
+            <div class="fila-resumen">
+                <span>Subtotal Bruto:</span>
+                <span id="resSubtotal">S/ 0.00</span>
+            </div>
+            <div class="fila-resumen desc-color">
+                <span>Descuento aplicado:</span>
+                <span id="resDescuento">- S/ 0.00</span>
+            </div>
+            <div class="fila-resumen">
+                <span>IGV (18%):</span>
+                <span id="resIGV">S/ 0.00</span>
+            </div>
+            <div class="fila-resumen">
+                <span>Recargo Servicio:</span>
+                <span id="resRecargo">S/ 0.00</span>
+            </div>
+            <hr>
+            <div class="fila-resumen total">
+                <span>TOTAL NETO:</span>
+                <span id="resTotal">S/ 0.00</span>
+            </div>
+        </section>
+
+        <button id="btnPagar" class="btn-principal">PROCESAR PEDIDO</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --dorado: #D4AF37;
+    --dorado-oscuro: #B8860B;
+    --negro-suave: #1A1A1A;
+    --gris-fondo: #F4F4F9;
+    --blanco: #FFFFFF;
+    --texto: #333333;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-ventas {
+    background-color: var(--blanco);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    border-top: 5px solid var(--dorado);
+}
+
+header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--negro-suave);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- CARDS Y SECCIONES --- */
+.seccion-card {
+    background: #fdfdfd;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px; /* Espaciado ajustado */
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--dorado-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- INPUTS (Número y Texto) --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo para el nuevo input de monto y el de cupones */
+input[type="number"],
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    border-color: var(--dorado);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+}
+
+/* --- OPCIONES DE SERVICIO (Radios) --- */
+.opciones-servicio {
+    display: flex;
+    gap: 12px;
+}
+
+.radio-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-radio {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.radio-label:hover {
+    background-color: #fff9e6;
+    border-color: var(--dorado);
+}
+
+/* --- BOTONES --- */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-secundario {
+    background-color: var(--negro-suave);
+    color: white;
+    padding: 0 20px;
+}
+
+.btn-secundario:hover {
+    background-color: #444;
+}
+
+.btn-principal {
+    width: 100%;
+    background-color: var(--dorado);
+    color: white;
+    padding: 16px;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-principal:hover {
+    background-color: var(--dorado-oscuro);
+    transform: translateY(-2px);
+}
+
+/* --- RESUMEN DE CUENTA --- */
+.resumen {
+    background-color: #fafafa;
+}
+
+.fila-resumen {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.desc-color {
+    color: #27ae60; /* Verde para los descuentos */
+    font-weight: 500;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 12px 0;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--negro-suave);
+}
+
+.info-texto {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 8px;
+}
