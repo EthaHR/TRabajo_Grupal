@@ -5,14 +5,14 @@ togglePassword.addEventListener('click', function () {
     // Cambia el tipo: si es password lo pasa a text y viceversa
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
-    
+
     // Cambia el icono: de ojo abierto a ojo tachado
     this.querySelector('i').classList.toggle('bi-eye');
     this.querySelector('i').classList.toggle('bi-eye-slash');
 });
 
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const cargo = document.getElementById('cargo').value;
@@ -44,4 +44,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         mensajeError.innerHTML = '<small><i class="bi bi-exclamation-circle me-1"></i> Credenciales incorrectas para el cargo seleccionado</small>';
     }
 });
+
+
 
