@@ -28,6 +28,7 @@ body {
     animation: fadeInUp 0.8s ease-out; /* Animación integrada aquí */
 }
 
+/*Diseño del icono*/
 .icon-circle {
     width: 65px;
     height: 65px;

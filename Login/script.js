@@ -7,6 +7,7 @@ const submitBtn = loginForm.querySelector('button[type="submit"]');
 let intentosFallidos = 0;
 const MAX_INTENTOS = 3;
 
+// Mostrar y ocultar la contraseña
 togglePassword.addEventListener('click', function () {
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
@@ -14,6 +15,7 @@ togglePassword.addEventListener('click', function () {
     this.querySelector('i').classList.toggle('bi-eye-slash');
 });
 
+// Procesos del Login (Captura y verificación de credenciales)
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
